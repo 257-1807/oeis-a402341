@@ -1,0 +1,8 @@
+$ lake env lean -DwarningAsError=true Width16.lean
+'Width16.central_choose_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Width16.centralCount_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Width16.centralCount_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Width16.positive_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Width16.coeff_le_central' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Width16.conjecture_A402341' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit status: 0

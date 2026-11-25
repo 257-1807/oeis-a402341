@@ -1,0 +1,15 @@
+$ lake env leanchecker --verbose Width16.BinaryWeight
+replaying Width16.BinaryWeight
+exit status: 0
+
+$ lake env leanchecker --verbose Width16.Expansion
+replaying Width16.Expansion
+exit status: 0
+
+$ lake env leanchecker --verbose Width16.Maximum
+replaying Width16.Maximum
+exit status: 0
+
+$ lake env leanchecker --verbose Width16.Valuation
+replaying Width16.Valuation
+exit status: 0

@@ -1,0 +1,14 @@
+{
+  "sequence": "A402341",
+  "author": "Sajid Khan Hussain",
+  "entry_date": "2026-11-17",
+  "revision": 13,
+  "locator": "third COMMENT (line 8 in the pinned .seq export)",
+  "upstream": "https://github.com/oeis/oeisdata",
+  "commit": "be2f360122f661bddebad22b15440935d21ac598",
+  "file": "seq/A402/A402341.seq",
+  "file_sha256": "7844873d7053a0966866051ef92b2e8a5033b904e5d37de348da66bfccf7c4e9",
+  "checked": "2026-11-25",
+  "source_type": "public OEIS conjecture",
+  "arXiv_id": null
+}

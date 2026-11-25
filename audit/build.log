@@ -1,0 +1,42 @@
+$ lean --version
+Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)
+exit status: 0
+
+$ lake --version
+Lake version 5.0.0-src+611c117 (Lean version 4.36.0)
+exit status: 0
+
+$ git -C .lake/packages/mathlib rev-parse HEAD
+fc4f59e577feb1a4956671bc04ac18aaaf8cd842
+exit status: 0
+
+$ lake --wfail build
+✔ [6370/6380] Built Width16.Expansion (4.9s)
+✔ [6372/6380] Built Width16.BinaryWeight (5.4s)
+✔ [6374/6380] Built Width16.Maximum (4.7s)
+ℹ [6376/6380] Built Width16.Valuation (4.7s)
+info: Width16/Valuation.lean:101:0: 'Width16.centralCount_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16/Valuation.lean:102:0: 'Width16.conjecture_A402341' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6378/6380] Built Width16 (1.9s)
+info: Width16.lean:6:0: 'Width16.central_choose_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:7:0: 'Width16.centralCount_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:8:0: 'Width16.centralCount_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:9:0: 'Width16.positive_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:10:0: 'Width16.coeff_le_central' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:11:0: 'Width16.conjecture_A402341' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (6380 jobs).
+exit status: 0
+
+$ lake build
+ℹ [6376/6380] Replayed Width16.Valuation
+info: Width16/Valuation.lean:101:0: 'Width16.centralCount_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16/Valuation.lean:102:0: 'Width16.conjecture_A402341' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6378/6380] Replayed Width16
+info: Width16.lean:6:0: 'Width16.central_choose_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:7:0: 'Width16.centralCount_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:8:0: 'Width16.centralCount_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:9:0: 'Width16.positive_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:10:0: 'Width16.coeff_le_central' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Width16.lean:11:0: 'Width16.conjecture_A402341' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (6380 jobs).
+exit status: 0
