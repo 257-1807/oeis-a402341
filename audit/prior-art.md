@@ -19,3 +19,9 @@ Hussain 的 *Parity of central coefficients of (1+x+...+x^(w-1))^n: explicit aut
 | Lean Zulip、Mathlib | 在公开的 Zulip 归档网页索引检索 `A402341`、作者、`central coefficient` 和 `valuation`。在本机 Mathlib 快照 `fc4f59e5` 检索题号及十六项中心系数的英语写法。未找到本题的完成声明。中央二项式、质因数分解、进位等基础结论属于已有理论。[Zulip 公开归档](https://leanprover-community.github.io/archive/) · [Mathlib 二项式分解的源文件](https://github.com/leanprover-community/mathlib4/blob/v4.36.0/Mathlib/Data/Nat/Choose/Factorization.lean) |
 
 词条距本次核查仅八日，数据库更新可能滞后。关键词检索也可能漏掉使用另一套术语的工作。这份查重记录用于判断已知公开证据的范围，不作全球首证保证。
+
+## 2026-11-25 发布后的独立复核
+
+直接访问 OEIS 的内部格式页面，修订号仍为 #13（11 月 17 日），COMMENTS 仍保留 Hussain 提出的偶数行赋值猜想。GitHub 再查 `"A402341" in:readme` 返回两个仓库。Hussain 的仓库给出先前的奇偶性结果，本项目的提交给出所有偶数行的精确赋值。两份公开记录的作者、时间和结论均可分别核对。[OEIS 修订 #13](https://oeis.org/A402341/internal) · [Hussain 的代码](https://github.com/Sajidsaj/central-coefficient-parity/tree/8981e05f6880086891a13e5e663c0db36750b5fb) · [本项目的证明提交](https://github.com/257-1807/oeis-a402341/commit/f07d8cb7d7c393197206bb4351bd2360d0c86c8e)
+
+独立复核下载了 Hussain 的 OEIS 系数表，对 $n=0,1,\ldots,829$ 的全部 **830 个中央系数**逐项比较。各项均与从 $F^0=1$ 开始的宽度 16 滑动卷积一致，比较涵盖奇数行和偶数行。下载表的 SHA-256 为 `d102a8cfaec73d152be40dfa750447adc72621947740997ba7d1c2d73cb5cbd2`。另行重跑仓库自带的离线脚本，核对了前十个已发表系数及 $0\le n\le1600$ 的 801 个偶数行的赋值。[OEIS 完整系数表](https://oeis.org/A402341/b402341.txt) · [仓库离线脚本](../scripts/check_coefficients.py)

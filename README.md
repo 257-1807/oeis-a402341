@@ -8,6 +8,8 @@ $$
 
 例如 $n=4$ 时，中央系数为 $2736=16\cdot171$，其 2-adic 赋值为 4。另一方面，$15n/2=30=(11110)_2$ 恰有四个 1。[Lean 主定理](Width16/Valuation.lean) · [公理输出](audit/axioms.log)
 
+[证明](#证明) · [Lean 主文件](Width16/Valuation.lean) · [查重与先例](audit/prior-art.md)
+
 ## 来源与查重
 
 Sajid Khan Hussain 于 2026 年 11 月 17 日在公开问题来源 OEIS A402341 的 COMMENTS 栏提出这个猜想。该条目没有 arXiv 号或独立定理编号。固定快照中第 8 行逐字写道：
@@ -19,6 +21,8 @@ Sajid Khan Hussain 于 2026 年 11 月 17 日在公开问题来源 OEIS A402341 
 原作者已经给出一般奇偶判据、一个 Chebyshev 展开式和数值数据。本项目使用同一多项式的平方展开，追踪各项能被 2 的哪些幂整除。核查日期为 **2026-11-25**。检索覆盖全部 13 次 OEIS 修订、作者的 GitHub 代码与两次 Zenodo 发布、Google Scholar、arXiv、前向引文、GitHub 代码和议题、MathOverflow、Lean Zulip、Mathlib，并核对了关于广义二项式系数的同余定理。在已核查的公开材料中未找到这一精确赋值猜想的完整先行解答；此判断不确立全球优先权。[原作者项目](https://github.com/Sajidsaj/central-coefficient-parity/tree/8981e05f6880086891a13e5e663c0db36750b5fb) · [检索词与结果](audit/prior-art.md) · [与已有定理的对照](audit/prior-research.md)
 
 ## 证明
+
+展开之后，只要恰有一项的 2-adic 赋值最低，所有其他项多出的那个因子 2 就能防止最低位在求和时抵消。下面引入第二个参数，使这个判断在每一步归纳中都能重复使用。
 
 **辅助系数。** 写 $n=2m$。同时研究一族整数
 
@@ -94,7 +98,6 @@ Elan 会读取 `lean-toolchain` 并选择 Lean 4.36.0；Mathlib 的固定提交�
 
 ```sh
 lake exe cache get Mathlib.Tactic Mathlib.Algebra.Polynomial.Reverse Mathlib.Data.Nat.Choose.Factorization Mathlib.Data.Nat.Choose.Central Mathlib.RingTheory.Multiplicity Mathlib.Algebra.BigOperators.Intervals
-lake build
 lake --wfail build
 lake env lean -DwarningAsError=true Width16.lean
 for m in BinaryWeight Expansion Maximum Valuation; do
@@ -102,6 +105,8 @@ for m in BinaryWeight Expansion Maximum Valuation; do
 done
 python3 scripts/check_coefficients.py
 ```
+
+发布后又用官方数表逐项核对了 $n=0,\ldots,829$ 的全部 830 个系数，包括奇数行。本文的精确赋值定理量化所有非负偶数行。数表核对的方法、范围和来源记录在[查重复核](audit/prior-art.md)。
 
 Python 独立地从 $F^0=1$ 开始，每次用宽为 16 的滑动窗口求下一行，使用精确整数运算。程序核查了 $n=0,2,\ldots,1600$ 的 801 个偶数指标，并与 OEIS 开头的十项逐项比较。[测试程序](scripts/check_coefficients.py) · [实际输出](audit/numeric.log)
 
